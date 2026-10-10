@@ -1,48 +1,418 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#070b1a" />
-  <title>3D Hero — Your Name</title>
-  <link rel="stylesheet" href="./style.css" />
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
-      }
-    }
-  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Pronob Paul - Junior Software Engineer (.NET, C#, ASP.NET Core, Blazor, SQL Server)">
+  <title>Portfolio_Website_of_Pronob_Paul</title>
+  <script>document.documentElement.classList.add('js');</script>
+  <link
+    href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+    rel="stylesheet" />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.css' />
+  <!-- Programming language / tech logos (used for floating zero-gravity icons + tech chips) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
+  <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-  <main class="hero">
-    <div class="ambient ambient-one"></div>
-    <div class="ambient ambient-two"></div>
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
-    <nav class="nav">
-      <a class="brand" href="#" aria-label="Home"><span class="brand-mark">P</span> PRONOB</a>
-      <a class="nav-link" href="#about">About me <span aria-hidden="true">↗</span></a>
-    </nav>
+  <!-- Header Section -->
+  <header>
+    <!-- Section-1 (Navbar Section) -->
+    <nav class="navbar navbar-expand-lg dark-black position-fixed top-0 w-100" id="mainNav">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+          aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars text-white"></i>
+        </button>
+        <div class="navbar-collapse collapse mt-3 mt-lg-0" id="navbarToggler">
+          <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-5">
+            <li class="nav-item"><a href="#hero-section" class="nav-link text-white">Home</a></li>
+            <li class="nav-item"><a href="#about-section" class="nav-link text-white">About</a></li>
+            <!-- <li class="nav-item"><a href="#services-section" class="nav-link text-white">Services</a></li> -->
+            <li class="nav-item"><a href="#portfolio" class="nav-link text-white">Portfolio</a></li>
+            <li class="nav-item"><a href="#contact-us" class="nav-link text-white">Contact</a></li>
+          </ul>
 
-    <section class="hero-copy" id="about">
-      <p class="eyebrow"><span class="status-dot"></span> AVAILABLE FOR OPPORTUNITIES</p>
-      <h1>Hi, I'm <span>Pronob.</span><br />I build for the web.</h1>
-      <p class="intro">A Computer Science graduate exploring full-stack development, clean UI, and useful digital experiences.</p>
-      <div class="actions">
-        <a class="primary-button" href="mailto:hello@example.com">Contact me <span aria-hidden="true">↗</span></a>
-        <a class="text-button" href="#about">Explore portfolio <span aria-hidden="true">↓</span></a>
+          <div class="nav-cv mt-3 mt-lg-0">
+            <a class="cv-btn" href="./assets/sample-resume/Resume-sample.pdf" download>
+              <i class="fa-solid fa-download"></i> My CV
+            </a>
+          </div>
+        </div>
       </div>
-      <p class="hint">Move your mouse over the 3D portrait</p>
+    </nav>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+    <!-- Section-2 (Hero Section) -->
+    <section id="hero-section" class="hero-section container-fluid position-relative">
+  <div class="hero-section-overlay"></div>
+  <div class="container hero-content">
+    <div class="row align-items-center w-100 gx-lg-5">
+      <div class="col-lg-7 text-center text-lg-start hero-text">
+
+        <!-- Glass box -->
+        <div class="hero-glass-wrap">
+          <span class="glass-blob gb1"></span>
+          <span class="glass-blob gb2"></span>
+          <div class="hero-glass">
+            <p class="hero-hello">Hello <span class="wave">👋</span></p>
+            <h1 class="text-white fw-semibold">I am <span class="gradient-text">Pronob Paul</span></h1>
+          </div>
+        </div>
+
+        <h2 class="text-white mt-4 mt-lg-5 fw-light"><span class="typing-text"></span></h2>
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn-glow">View Projects <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#contact-us" class="btn-ghost">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="col-lg-5 mt-5 mt-lg-0">
+        <div class="hero-3d" id="hero3d">
+          <div class="hero-card">
+            <img src="./assets/img/Hero-Section/PronobPaul.png" alt="Pronob Paul">
+          </div>
+          <span class="float-badge b1"><i class="devicon-csharp-plain colored"></i></span>
+          <span class="float-badge b2"><i class="devicon-dotnetcore-plain colored"></i></span>
+          <span class="float-badge b3"><i class="devicon-microsoftsqlserver-plain colored"></i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#about-section" class="scroll-hint" aria-label="Scroll down"><span></span></a>
+</section>
+
+    <!-- Section-3 (About Section) -->
+    <section id="about-section" class="about-section container-fluid">
+      <div class="container reveal">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="d-xl-flex gap-5 rounded-4">
+              <img src="./assets/img/About-Section/me.jpg" alt="About-Man" width="250" height="225"
+                class="profile-img">
+              <div class="profile-description">
+                <div class="info-item" style="--d:.05s">
+                  <span class="info-icon"><i class="fa-solid fa-user"></i></span>
+                  <div class="info-text"><small>Name</small><span>Pronob Kumar Paul</span></div>
+                </div>
+                <div class="info-item" style="--d:.15s">
+                  <span class="info-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                  <div class="info-text"><small>Profile</small><span>Computer Sciences &amp; Engineering</span></div>
+                </div>
+                <div class="info-item" style="--d:.25s">
+                  <span class="info-icon"><i class="fa-solid fa-envelope"></i></span>
+                  <div class="info-text"><small>Email</small><a href="mailto:pronob1914@gmail.com">pronob1914@gmail.com</a></div>
+                  <button class="copy-btn" data-copy="pronob1914@gmail.com" aria-label="Copy email"><i class="fa-regular fa-copy"></i></button>
+                </div>
+                <div class="info-item" style="--d:.35s">
+                  <span class="info-icon"><i class="fa-solid fa-phone"></i></span>
+                  <div class="info-text"><small>Phone</small><a href="tel:+8801980603405">+88 01980603405</a></div>
+                  <button class="copy-btn" data-copy="+88 01980603405" aria-label="Copy phone"><i class="fa-regular fa-copy"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="skills-main-div mt-5 mb-2">
+              <h3 class="fw-600 mb-5">Skills</h3>
+              <div class="skills-div mt-4">
+                <div class="mb-2 d-flex justify-content-between">
+                  <span>Programming Language</span>
+                  <span class="skill-percent">90%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 90%;"></div>
+                </div>
+              </div>
+              <div class="skills-div mt-4">
+                <div class="mb-2 d-flex justify-content-between">
+                  <span>API Connection</span>
+                  <span class="skill-percent">80%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 80%;"></div>
+                </div>
+              </div>
+              <div class="skills-div mt-4">
+                <div class="mb-2 d-flex justify-content-between">
+                  <span>Database</span>
+                  <span class="skill-percent">75%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 75%;"></div>
+                </div>
+              </div>
+              <div class="skills-div mt-4">
+                <div class="mb-2 d-flex justify-content-between">
+                  <span>communicate with English</span>
+                  <span class="skill-percent">70%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 70%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 about-me-description mt-5 mt-lg-0 p-5 pt-lg-0">
+            <h2 class="fw-600">About me</h2>
+            <div class="blue-line"></div>
+            <p class="mt-4 pt-2 segoe-font">I am a passionate Computer Science and Engineering graduate from Daffodil
+              International University, driven by a relentless curiosity for technology and problem-solving.</p>
+            <p class="segoe-font mt-3">While my academic journey reflects challenges, I’ve prioritized hands-on
+              learning, contributing to projects on every Core Course <b>(Java, Python, Operating System, Mobile
+                Application, Web Application, Embedded Systems and IoT and also I did Problem Solving)</b> and
+              collaborating with peers on GitHub to deliver functional solutions. My strengths lie in adapting to new
+              technologies quickly, breaking down complex problems, and delivering clean, maintainable code.</p>
+            <p class="segoe-font mt-3">Currently, I am working with <strong>C#, ASP.NET Core, Blazor, REST APIs, and
+                SQL Server, focusing on application development, UI improvements, database solutions, and
+                troubleshooting</strong>. I also provide client support and technical assistance to help ensure smooth
+              system operations.</p>
+            <p class="segoe-font mt-3">I enjoy learning new technologies, solving technical problems, collaborating
+              with teams, and building reliable, user-friendly software solutions. I am continuously improving my
+              skills in full-stack development and software engineering.</p>
+
+            <div class="tech-chips">
+              <span class="tech-chip"><i class="devicon-csharp-plain colored"></i> C#</span>
+              <span class="tech-chip"><i class="devicon-dotnetcore-plain colored"></i> ASP.NET Core</span>
+              <span class="tech-chip"><i class="fa-solid fa-fire" style="color:#7c3aed"></i> Blazor</span>
+              <span class="tech-chip"><i class="fa-solid fa-plug" style="color:#0D6EFD"></i> REST APIs</span>
+              <span class="tech-chip"><i class="devicon-microsoftsqlserver-plain colored"></i> SQL Server</span>
+              <span class="tech-chip"><i class="devicon-java-plain colored"></i> Java</span>
+              <span class="tech-chip"><i class="devicon-python-plain colored"></i> Python</span>
+              <span class="tech-chip"><i class="devicon-git-plain colored"></i> Git</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="visual" aria-label="Interactive 3D portrait">
-      <div class="visual-glow"></div>
-      <canvas id="scene"></canvas>
-      <div class="visual-caption"><span class="caption-line"></span> CREATIVE DEVELOPER <span class="caption-line"></span></div>
+    <!-- Section-4 (Resume Section) -->
+    <section id="resume-section" class="resume-section container-fluid">
+      <div class="container mt-100">
+        <h2 class="text-center fw-600 dark-black-text reveal">Resume</h2>
+        <div class="blue-line mx-auto reveal"></div>
+        <p class="text-center segoe-font mt-5 mb-3 mb-sm-5 pb-sm-5 reveal">Currently, I am working as a Junior
+          Software Engineer at Pirthe Limited, focusing on .NET application development, database management, and
+          technical support for digital land management systems. I am continuously enhancing my skills in C#, ASP.NET
+          Core, Blazor, REST APIs, and SQL Server while gaining practical experience in software development,
+          troubleshooting, and client support.</p>
+      </div>
+      <div class="container">
+        <div class="row justify-content-evenly">
+          <div class="col-lg-5">
+            <h4 class="resume-title dark-black-text fw-600 my-5 reveal">Education</h4>
+
+            <div class="resume-item reveal">
+              <h5 class="grey-clr mb-3">Bachelor Of Computer Science &amp; Engineering</h5>
+              <p class="mt-lg-3 segoe-font"><em>Daffodil International University, Dhaka</em></p>
+              <h6 class="year mb-4">2022 - 2026</h6>
+              <p class="mt-lg-3 segoe-font mb-0">I have completed my Bachelor’s degree in Computer Science and
+                Engineering (CSE) at Daffodil International University. Throughout my academic journey, I developed a
+                strong foundation in programming, data structures, algorithms, and software development. My studies
+                also helped me strengthen my problem-solving, teamwork, critical-thinking, and project management
+                skills.</p>
+            </div>
+
+            <div class="resume-item reveal">
+              <h5 class="grey-clr mb-3">Higher Secondary School Certificate of Science</h5>
+              <p class="mt-lg-3 segoe-font"><em>Govt.Haji Jamal Uddin Degree-Honours College , Pabna</em></p>
+              <h6 class="year mb-4">2019 - 2021</h6>
+              <p class="mt-lg-3 segoe-font mb-0">I pursued my Higher Secondary School Certificate with a focus on
+                science. This period was instrumental in shaping my analytical thinking and problem-solving
+                abilities. I studied subjects like physics, chemistry, and mathematics, which gave me a solid
+                grounding in scientific principles and quantitative analysis. My experience here strengthened my
+                passion for technology and set a firm foundation for my journey in computer science.</p>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <h4 class="resume-title dark-black-text fw-600 my-5 reveal">Expertise</h4>
+            <div class="resume-item reveal">
+              <h5 class="grey-clr mb-3">Team Work &amp; Gather Knowledge</h5>
+              <h6 class="year mb-4">All Semester (2022-2026)</h6>
+              <p class="mt-lg-3 segoe-font"><em>Daffodil International University</em></p>
+              <ul class="mb-0">
+                <li class="p-font-size dark-black-text segoe-font mb-2">when we made a project in a Course, then we
+                  create a group to make fantastic project.</li>
+                <li class="p-font-size dark-black-text segoe-font mb-2">Lead in the design, development, and
+                  implementation of the Project, and production communication materials</li>
+                <li class="p-font-size dark-black-text segoe-font mb-2">The 5 members of the team and provide counsel
+                  on all aspects of the project.</li>
+                <li class="p-font-size dark-black-text segoe-font mb-2">Supervise the assessment of all project
+                  materials in order to ensure quality and accuracy of the project</li>
+              </ul>
+            </div>
+            <div class="resume-item reveal">
+              <h5 class="grey-clr mb-3">Intern</h5>
+              <h6 class="year mb-4">Pirthe Limited (April 2026 – August 2026)</h6>
+              <ul class="mb-0">
+                <li class="p-font-size dark-black-text segoe-font mb-2">Assisted with .NET project development and
+                  related technical activities.</li>
+                <li class="p-font-size dark-black-text segoe-font mb-2">Supported project operations and helped
+                  resolve technical challenges.</li>
+              </ul>
+            </div>
+            <div class="resume-item reveal">
+              <h5 class="grey-clr mb-3">Junior Software Engineer</h5>
+              <h6 class="year mb-4">Pirthe Limited (September 2026 – Present)</h6>
+              <ul class="mb-0">
+                <li class="p-font-size dark-black-text segoe-font mb-2">Contribute to the development and maintenance
+                  of two .NET projects, including UI enhancements and user experience improvements.</li>
+                <li class="p-font-size dark-black-text segoe-font mb-2">Assist with database design and
+                  implementation to improve data management and storage.</li>
+                <li class="p-font-size dark-black-text segoe-font mb-2">Provide client support and technical
+                  assistance for the Establishment of Digital Land Management System.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <div class="bottom-note"><span>DESIGN · CODE · CREATE</span><span>SCROLL TO EXPLORE ↓</span></div>
+    <!-- Section-5 (Services-Section) -->
+    <!--  <section id="services-section" class="services-section container-fluid">
+      <div class="container mt-100">
+        <h2 class="text-center fw-600 dark-black-text">Services</h2>
+        <div class="blue-line mx-auto"></div>
+        <p class="text-center segoe-font mt-5 mb-3 mb-sm-5 pb-sm-5">Lorem, ipsum dolor sit amet consectetur adipisicing
+          elit. Dignissimos, consectetur dolorem!</p>
+      </div>
+      ... (services cards - commented out, same as original) ...
+    </section> -->
+
+    <!-- Section-6 (Acheivements Section) -->
+    <!--     <section id="achievements" class="acheivement-section container-fluid">
+      ... (achievement counters - commented out, same as original) ...
+    </section> -->
+
+    <!-- Section-7 (Portfolio Section) -->
+    <section id="portfolio" class="portfolio-section container-fluid">
+      <div class="container mt-100">
+        <h2 class="text-center fw-600 dark-black-text reveal">Projects Done</h2>
+        <div class="blue-line mx-auto reveal"></div>
+        <p class="text-center segoe-font mt-5 mb-3 mb-sm-5 pb-sm-5 reveal">I am a student and I made some projects of
+          my many Courses.</p>
+      </div>
+      <div class="container projects-main-div">
+        <div class="project-div pt-3">
+          <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6 col-12 reveal" style="--d:0s">
+              <div class="project-card"><img src="./assets/img/Projects-Done-Section/Mockup/Mockup-1.webp" alt="Mockup-1" class="w-100"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 reveal" style="--d:.12s">
+              <div class="project-card"><img src="./assets/img/Projects-Done-Section/Mockup/Mockup-2.webp" alt="Mockup-2" class="w-100"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 reveal" style="--d:.24s">
+              <div class="project-card"><img src="./assets/img/Projects-Done-Section/Mockup/Mockup-3.webp" alt="Mockup-3" class="w-100"></div>
+            </div>
+          </div>
+          <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6 col-12 reveal" style="--d:0s">
+              <div class="project-card"><img src="./assets/img/Projects-Done-Section/Websites/Website-1.webp" alt="Website-1" class="w-100"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 reveal" style="--d:.12s">
+              <div class="project-card"><img src="./assets/img/Projects-Done-Section/Websites/Website-2.webp" alt="Website-2" class="w-100"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 reveal" style="--d:.24s">
+              <div class="project-card"><img src="./assets/img/Projects-Done-Section/Websites/Website-3.webp" alt="Website-3" class="w-100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section-9 (Contact Section) -->
+    <section id="contact-us" class="contact-section container-fluid">
+      <div class="container mt-100">
+        <h2 class="text-center fw-600 dark-black-text reveal">Contact Me</h2>
+        <div class="blue-line mx-auto reveal"></div>
+        <p class="text-center segoe-font mt-5 mb-4 pb-5 reveal">If you interested work with me OR Hire me ,So you can
+          Contact with me</p>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-8 col-12 reveal">
+            <form action="connect.php" method="post" class="rounded p-3 py-5 p-sm-5 text-xl-center"
+              id="contact-form">
+              <input type="text" class="form-control form-control-lg mb-5 p-3" required placeholder="Enter your name"
+                id="full_name" name="full_name">
+              <input type="email" class="form-control form-control-lg mb-5 p-3" required
+                placeholder="Enter your email" id="email_id" name="email_id">
+              <textarea class="form-control form-control-lg mb-5" rows="8" placeholder="Your feedback/suggestions"
+                required id="message" name="message"></textarea>
+              <button type="submit" class="btn btn-block submit-btn rounded-pill">Message</button>
+              <p class="thank-you-msg mt-5 text-center">Thank you for submitting the form!!!</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-  <script type="module" src="./script.js"></script>
+
+  <!-- Section-10 (Footer Section) -->
+  <footer id="footer" class="footer-section container-fluid mt-100">
+    <p class="copyright-txt text-center text-sm-start mb-5 text-white">© Copyright <strong> <a
+          href="https://www.youtube.com/@techieandrew31" target="_blank"
+          class="text-decoration-none text-white">Paul</a></strong> All Rights Reserved</p>
+    <div class="social-icons">
+      <a href="#" class="text-decoration-none"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" class="text-decoration-none"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="#" class="text-decoration-none"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" class="text-decoration-none"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script>
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        try { await navigator.clipboard.writeText(btn.dataset.copy); }
+        catch (e) {
+          const t = document.createElement('textarea');
+          t.value = btn.dataset.copy; document.body.appendChild(t); t.select();
+          document.execCommand('copy'); t.remove();
+        }
+        const icon = btn.querySelector('i');
+        btn.classList.add('copied'); icon.className = 'fa-solid fa-check';
+        setTimeout(() => { btn.classList.remove('copied'); icon.className = 'fa-regular fa-copy'; }, 1600);
+      });
+    });
+  </script>
+ 
+ <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof Typed === 'undefined') {
+      console.error('typed.js load hoy nai');
+      return;
+    }
+    new Typed('.typing-text', {
+      strings: ['.NET Developer', 'Full Stack Developer', 'Junior Software Engineer'],
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 60,
+      backDelay: 1200,
+      startDelay: 750
+    });
+  });
+</script>
+ 
+    (function () {
+      emailjs.init({
+        publicKey: "GHHfBHkt_4kaYyr3M",
+      });
+    })();
+  </script>
+  <!-- New: zero-gravity floating logos + scroll animations -->
+  <script src="./assets/js/app.js"></script>
 </body>
+
 </html>
